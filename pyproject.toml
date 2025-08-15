@@ -1,9 +1,20 @@
 [project]
 name = "dspy-dev-assistant"
 version = "0.1.0"
-description = "Add your description here"
+description = "A suite of AI tools that automate Python refactoring, generate agentic unit tests, and verify code against the latest docs using web search."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
-    "dspy>=3.0.1",
+    "dspy-ai",
+    "click",
+    "pytest",
+    "requests",
+    "beautifulsoup4",
+    "lxml",
+    "pydantic",
+    "ruff",
+    "mypy",
+    "black",
+    "isort",
+    "rich",
 ]

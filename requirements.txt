@@ -1,1 +1,12 @@
-dspy
+dspy-ai
+click
+pytest
+requests
+beautifulsoup4
+lxml
+pydantic
+ruff
+mypy
+black
+isort
+rich
