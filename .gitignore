@@ -4,8 +4,3 @@
 .gemini
 .clinerules
 .vscode
-uv.lock
-settings.json
-pyproject.toml
-.python-version
-.editorconfig
