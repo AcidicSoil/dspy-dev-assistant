@@ -122,7 +122,7 @@ Dynamic terminal titles for better multi-instance organization.
    cp global-rules/terminal-title-wrapper.zsh ~/.config/zsh/claude-wrapper.zsh
    mkdir -p ~/.config/zsh
    # Add claude-wrapper.zsh content
-
+   
    # Source in ~/.zshrc
    echo '[[ -f ~/.config/zsh/claude-wrapper.zsh ]] && source ~/.config/zsh/claude-wrapper.zsh' >> ~/.zshrc
    ```
@@ -148,3 +148,7 @@ This repository uses the `.mdc` (Markdown with Configuration) format, which prov
 - Standard markdown content ensures compatibility across different AI assistants
 
 This unified format means you can use the same rule files in both tools without modification.
+
+## License
+
+MIT License - See [LICENSE](./LICENSE) for details
