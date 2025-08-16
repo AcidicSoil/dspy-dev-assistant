@@ -3,6 +3,8 @@
 
     Do not make edits to the following files .gitignore, pyproject.toml, and requirements.txt
 
+    Reference agent-rules/* for additional directions
+
     # DSPy‑Powered Developer Assistant — Project Context (Root)
 
     **Scope:** Project-wide defaults and non-negotiables.

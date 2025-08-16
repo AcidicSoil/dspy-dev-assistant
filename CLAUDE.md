@@ -3,6 +3,8 @@
 
     Do not make edits to the following files .gitignore, pyproject.toml, and requirements.txt
 
+    Reference agent-rules/* for additional directions
+
     ```markdown
     # Model-Specific Guidance: Claude (Alternative Backend)
 
