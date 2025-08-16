@@ -4,6 +4,8 @@
 
     # Agents, Pipelines, and Tools
 
+    Do not make edits to the following files .gitignore, pyproject.toml, and requirements.txt
+
     **Scope:** How we compose DSPy modules, tools, and checks to fulfill Epics 1–3.
 
     ---

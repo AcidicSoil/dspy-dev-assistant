@@ -1,6 +1,7 @@
 
-`GEMINI.md` (Project Root Context)
-----------------------------------
+# `GEMINI.md` (Project Root Context)
+
+    Do not make edits to the following files .gitignore, pyproject.toml, and requirements.txt
 
     # DSPy‑Powered Developer Assistant — Project Context (Root)
 

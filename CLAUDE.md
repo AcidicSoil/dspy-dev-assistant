@@ -1,5 +1,7 @@
 
-    ## `CLAUDE.md` (Model-Specific Guidance — Alternative LLM)
+    # `CLAUDE.md` (Model-Specific Guidance — Alternative LLM)
+
+    Do not make edits to the following files .gitignore, pyproject.toml, and requirements.txt
 
     ```markdown
     # Model-Specific Guidance: Claude (Alternative Backend)
