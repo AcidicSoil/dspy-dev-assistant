@@ -15,6 +15,12 @@ class ImplementTask(dspy.Signature):
     patch = dspy.OutputField(desc="proposed code patch and file list")
 
 
+class AnalyzeCode(dspy.Signature):
+    """Evaluate a code patch for quality, performance, and security."""
+    patch = dspy.InputField(desc="proposed code patch")
+    report = dspy.OutputField(desc="quality, performance, and security findings")
+
+
 class RunChecks(dspy.Signature):
     """Execute tests or linters and summarize results."""
     repo = dspy.InputField(desc="path to repository")

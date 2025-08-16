@@ -5,4 +5,4 @@ This directory contains the original agent instructions prior to the DSPy refact
 - `global/` – cross-project rules and setup scripts
 - `project/` – task‑specific guidelines such as commits, issue analysis, and documentation
 
-These files have not been translated into DSPy signatures. Prefer the new `dspy/` rulebook for active development.
+These files have not been translated into DSPy signatures. Prefer `dspy/DSPY_RULES.md` for active development and consult `dspy/TRACEABILITY.md` for mappings from these legacy files to their DSPy successors.

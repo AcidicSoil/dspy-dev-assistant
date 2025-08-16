@@ -1,7 +1,7 @@
 """DSPy modules orchestrating LM strategies for each signature."""
 
 import dspy
-from .signatures import AnalyzeIssue, ImplementTask, RunChecks, CommitCode, UpdateDocs
+from .signatures import AnalyzeIssue, ImplementTask, AnalyzeCode, RunChecks, CommitCode, UpdateDocs
 
 
 class AnalyzerModule(dspy.Module):
@@ -20,6 +20,14 @@ class ImplementerModule(dspy.Module):
         return self.cot(spec=spec)
 
 
+class ReviewModule(dspy.Module):
+    def __init__(self, lm=None):
+        self.cot = dspy.ChainOfThought(AnalyzeCode, lm=lm)
+
+    def forward(self, patch):
+        return self.cot(patch=patch)
+
+
 class CheckModule(dspy.Module):
     def __init__(self, lm=None):
         self.literal = dspy.Literal(RunChecks, lm=lm)
@@ -28,17 +36,17 @@ class CheckModule(dspy.Module):
         return self.literal(repo=repo)
 
 
-class CommitModule(dspy.Module):
-    def __init__(self, lm=None):
-        self.cot = dspy.ChainOfThought(CommitCode, lm=lm)
-
-    def forward(self, diff: str):
-        return self.cot(diff=diff)
-
-
 class DocModule(dspy.Module):
     def __init__(self, lm=None):
         self.cot = dspy.ChainOfThought(UpdateDocs, lm=lm)
 
     def forward(self, patch):
         return self.cot(patch=patch)
+
+
+class CommitModule(dspy.Module):
+    def __init__(self, lm=None):
+        self.cot = dspy.ChainOfThought(CommitCode, lm=lm)
+
+    def forward(self, diff: str):
+        return self.cot(diff=diff)

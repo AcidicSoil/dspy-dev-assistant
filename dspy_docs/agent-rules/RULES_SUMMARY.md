@@ -8,4 +8,4 @@ This repository has been refactored around a DSPy architecture. Key practices in
 - Comprehensive code analysis before merge
 - Continuous improvement via feedback loops
 
-Legacy rule files now live in `legacy-rules/`. Active guidance resides in `dspy/`.
+Legacy rule files now live in `legacy-rules/`. Active guidance resides in `dspy/` via `DSPY_RULES.md`.
