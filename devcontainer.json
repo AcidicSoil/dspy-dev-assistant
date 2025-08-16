@@ -1,0 +1,14 @@
+{
+  "name": "My Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+  // Tell the environment to forward port 11434 on startup
+  "forwardPorts": [11434],
+
+  // Optional: Give the port a friendly name in the UI
+  "portsAttributes": {
+    "11434": {
+      "label": "Ollama API"
+    }
+  }
+}
