@@ -1,0 +1,44 @@
+[project]
+name = "dspy-dev-assistant"
+version = "0.1.0"
+description = "DSPy-powered developer assistant for refactoring, agentic test generation, and web-aware verification."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Clayton Bivens", email = "claytonbivens1@gmail.com" }]
+dependencies = [
+  "dspy"
+]
+
+[project.urls]
+homepage = "https://github.com/acidicsoil/dspy-dev-assistant/dspy-dev-assistant"
+repository = "https://github.com/acidicsoil/dspy-dev-assistant/dspy-dev-assistant"
+
+[project.scripts]
+dspy-dev = "dspy_dev.cli:app"
+
+[tool.uv]
+# uv will read dependencies from [project] and dev-dependencies below.
+
+[tool.uv.sources]
+# Example: pin private indexes or mirrors if needed.
+
+[tool.uv.dev-dependencies]
+pytest = ">=8"
+ruff = ">=0.5"
+mypy = ">=1.10"
+coverage = ">=7.6"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E","F","I","UP","N","B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+ignore_missing_imports = true
