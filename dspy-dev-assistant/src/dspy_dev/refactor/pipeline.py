@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from ..config import Config
 from ..utils.patches import Patch, RefactorResult, write_patch, apply_patch
 from .modules import DetectSmellsModule, PlanFixModule, GeneratePatchModule
+from .rules import run_rule_based_refactor
 
 @dataclass
 class RefactorOptions:
@@ -32,6 +33,16 @@ def run_refactor(root: Path, rules: list[str] | None, apply: bool, include_glob:
     gen = GeneratePatchModule()
     for path in iter_files(root, include_glob, exclude_glob):
         code = path.read_text(encoding="utf-8")
+        # Prefer a fast, deterministic rule-based patch first (demo)
+        local_diff = run_rule_based_refactor(path, code)
+        if local_diff.strip():
+            p = Patch(path=path, diff=local_diff)
+            result.patches.append(p)
+            if patch_out:
+                write_patch(p, patch_out)
+            if apply:
+                apply_patch(p)
+            continue
         smells = detect(code=code).smells_json
         plan_text = plan(code=code, smells_json=smells).plan
         diff = gen(code=code, plan=plan_text).patch or ""
