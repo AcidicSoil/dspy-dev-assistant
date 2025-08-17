@@ -4,3 +4,6 @@
 .gemini
 .clinerules
 .vscode
+tests/
+src/
+docs/**/agent-rules
