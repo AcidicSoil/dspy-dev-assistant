@@ -7,3 +7,6 @@
 tests/
 src/
 docs/**/agent-rules
+pyproject.toml
+.python-version
+uv.lock
