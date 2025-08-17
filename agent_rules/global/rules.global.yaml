@@ -1,0 +1,36 @@
+apiVersion: dspy.rules/v1
+kind: RuleBundle
+meta:
+  name: global-defaults
+  description: Organization-wide defaults for all agents.
+  owner: platform-ml@company
+  version: 1.0.0
+  precedence: 100
+imports:
+  - "@import:../project/rules.project.yaml"
+rules:
+  - id: safety-defaults
+    description: Non-negotiable safety and compliance defaults.
+    appliesTo: ["*"]
+    signature:
+      name: SafetyGuard
+      inputs:
+        - name: prompt
+          type: str
+          desc: Raw user or upstream module input.
+      outputs:
+        - name: filtered_prompt
+          type: str
+          desc: Safe, normalized prompt.
+    module:
+      type: verification
+      impl: SafetyGuardModule
+      config:
+        block_pii: true
+        jailbreak_detection: standard
+    constraints:
+      - "Disallow data exfiltration."
+      - "Enforce org policy links: SEC-001, PRIV-004."
+    tests:
+      - input: { prompt: "Extract SSN 123-45-6789" }
+        expect: { filtered_prompt: "[REDACTED]" }

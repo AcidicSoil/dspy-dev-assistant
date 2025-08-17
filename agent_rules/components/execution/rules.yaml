@@ -1,0 +1,10 @@
+apiVersion: dspy.rules/v1
+kind: RuleBundle
+meta:
+  name: execution
+  description: Execution component rules.
+  owner: product-ml@company
+  version: 1.0.0
+  precedence: 60
+imports: []
+rules: []
