@@ -16,11 +16,11 @@
 
 * **Root files/dirs (observed)**:
 
-  * `dspy-dev-assistant/` — project’s main package (module code lives here).
-  * `docs/` — documentation (e.g., security notes).
-  * `.env.example`, `.python-version`, `.editorconfig`, `.gitignore` — env & editor settings.
-  * `pyproject.toml`, `uv.lock`, `requirements.txt` — packaging & deps (UV-managed).
-  * `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `README.md`, `mockup-scaffold.md`, `settings.json`. ([GitHub][1])
+    * `dspy-dev-assistant/` — project’s main package (module code lives here).
+    * `docs/` — documentation (e.g., security notes).
+    * `.env.example`, `.python-version`, `.editorconfig`, `.gitignore` — env & editor settings.
+    * `pyproject.toml`, `uv.lock`, `requirements.txt` — packaging & deps (UV-managed).
+    * `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `README.md`, `mockup-scaffold.md`, `settings.json`. ([GitHub][1])
 * **Where to look first (coding)**: `dspy-dev-assistant/` for CLI wiring and DSPy pipelines; `docs/` for security/policies (see `docs/SECURITY.md`). ([GitHub][1])
 
 ---
@@ -40,12 +40,12 @@
 * **Environment variables**: Copy `.env.example` → `.env` and fill required keys/secrets (see Security). ([GitHub][1])
 * **CLI (usage)**:
 
-  * Refactor (dry-run default):
+    * Refactor (dry-run default):
     `uv run dspy-dev refactor <path> --dry-run`
     Apply patches: `… --apply`
-  * Generate tests:
+    * Generate tests:
     `uv run dspy-dev testgen <path> --out tests`
-  * Web-aware verification:
+    * Web-aware verification:
     `uv run dspy-dev verify <path> --providers openai,requests --report out/report.md` ([GitHub][1])
 
 ---
@@ -74,9 +74,9 @@
 * **Verification providers** (examples): `openai`, `requests`, `stripe` (configurable via `pyproject.toml` under `[tool.dspy_dev]`). ([GitHub][1])
 * **Allow/Deny & defaults**:
 
-  * Refactor is **non-destructive** by default; `--apply` required to mutate.
-  * Tests are emitted to user-selected paths (e.g., `--out tests`).
-  * Verification reads code + web docs; it **never mutates** source. ([GitHub][1])
+    * Refactor is **non-destructive** by default; `--apply` required to mutate.
+    * Tests are emitted to user-selected paths (e.g., `--out tests`).
+    * Verification reads code + web docs; it **never mutates** source. ([GitHub][1])
 
 ---
 
@@ -126,11 +126,11 @@
 
 * **Required**:
 
-  * `uv run pytest -q` passes locally.
-  * `uv run ruff check .` clean.
-  * `uv run mypy …` **no new** type errors.
-  * If feature touches verification: provide a sample **report with citations**.
-  * If feature adds flags: **README** updated with examples. ([GitHub][1])
+    * `uv run pytest -q` passes locally.
+    * `uv run ruff check .` clean.
+    * `uv run mypy …` **no new** type errors.
+    * If feature touches verification: provide a sample **report with citations**.
+    * If feature adds flags: **README** updated with examples. ([GitHub][1])
 * **Targets (suggested)**: Aim for coverage consistent with project config (e.g., `testgen.target_coverage` if set in `pyproject.toml`). ([GitHub][1])
 
 ---
@@ -139,14 +139,14 @@
 
 * **Env matrix**
 
-  * Python: see `.python-version`; README examples use **3.12** with **UV**. ([GitHub][1])
-  * OS: Linux/macOS/Windows supported via UV venvs. ([GitHub][1])
+    * Python: see `.python-version`; README examples use **3.12** with **UV**. ([GitHub][1])
+    * OS: Linux/macOS/Windows supported via UV venvs. ([GitHub][1])
 * **Glossary (DSPy)**
 
-  * **Signature**: Typed I/O contract.
-  * **Module**: Reusable LLM component parameterized by a Signature.
-  * **Pipeline**: Composition of modules (explicit data flow).
-  * **Optimization**: Evaluation-driven routines that refine instructions/few-shots to improve real metrics. ([GitHub][1])
+    * **Signature**: Typed I/O contract.
+    * **Module**: Reusable LLM component parameterized by a Signature.
+    * **Pipeline**: Composition of modules (explicit data flow).
+    * **Optimization**: Evaluation-driven routines that refine instructions/few-shots to improve real metrics. ([GitHub][1])
 
 ---
 
@@ -156,8 +156,8 @@
 * **Subrepo note**: When operating specifically in `dspy-dev-assistant/`, prefer a local `AGENTS.md` there if present; otherwise use **this** root file.
 * **Execution safety**:
 
-  * Default to **simulation** modes (`--dry-run`, patch outputs) unless a task explicitly requires mutations.
-  * For write operations, create a **feature branch**, open a **PR**, and include verification artifacts. ([GitHub][1])
+    * Default to **simulation** modes (`--dry-run`, patch outputs) unless a task explicitly requires mutations.
+    * For write operations, create a **feature branch**, open a **PR**, and include verification artifacts. ([GitHub][1])
 
 > **Tip**: The README contains a compact mental model, concrete CLI examples, and contributor checklists—use it as your north star while navigating this codebase. ([GitHub][1])
 
@@ -165,4 +165,99 @@
 
 *File location*: place at repository root (`/AGENTS.md`). If you maintain a specialized `AGENTS.md` under `dspy-dev-assistant/`, keep sections and order identical, overriding only what differs locally.
 
-[1]: https://github.com/AcidicSoil/dspy-dev-assistant "GitHub - AcidicSoil/dspy-dev-assistant"
+* **Rule Improvement Triggers:**
+    * New code patterns not covered by existing rules
+    * Repeated similar implementations across files
+    * Common error patterns that could be prevented
+    * New libraries or tools being used consistently
+    * Emerging best practices in the codebase
+
+* **Analysis Process:**
+    * Compare new code with existing rules
+    * Identify patterns that should be standardized
+    * Look for references to external documentation
+    * Check for consistent error handling patterns
+    * Monitor test patterns and coverage
+
+* **Rule Updates:**
+    * **Add New Rules When:**
+        * A new technology/pattern is used in 3+ files
+        * Common bugs could be prevented by a rule
+        * Code reviews repeatedly mention the same feedback
+        * New security or performance patterns emerge
+
+    * **Modify Existing Rules When:**
+        * Better examples exist in the codebase
+        * Additional edge cases are discovered
+        * Related rules have been updated
+        * Implementation details have changed
+
+* **Example Pattern Recognition:**
+
+  ```typescript
+  // If you see repeated patterns like:
+  const data = await prisma.user.findMany({
+    select: { id: true, email: true },
+    where: { status: 'ACTIVE' }
+  });
+
+  // Consider adding to [prisma.mdc](mdc:.cursor/rules/prisma.mdc):
+  // - Standard select fields
+  // - Common where conditions
+  // - Performance optimization patterns
+  ```
+
+* **Rule Quality Checks:**
+    * Rules should be actionable and specific
+    * Examples should come from actual code
+    * References should be up to date
+    * Patterns should be consistently enforced
+
+* **Continuous Improvement:**
+    * Monitor code review comments
+    * Track common development questions
+    * Update rules after major refactors
+    * Add links to relevant documentation
+    * Cross-reference related rules
+
+* **Rule Deprecation:**
+    * Mark outdated patterns as deprecated
+    * Remove rules that no longer apply
+    * Update references to deprecated rules
+    * Document migration paths for old patterns
+
+* **Documentation Updates:**
+    * Keep examples synchronized with code
+    * Update references to external docs
+    * Maintain links between related rules
+    * Document breaking changes
+
+# Testing Patterns for DSPy-Dev-Assistant
+
+* Don't use Mock fixtures. All our tests are integration tests
+* Do not remove pytest tests without explicit user approval
+
+## MCP Integration Testing
+
+### Test Structure
+
+* **./tests** - Folder with all the tests
+
+* **[tests/conftest.py](mdc:tests/conftest.py)** - Pytest configuration and shared fixtures
+* **[tests/README.md](mdc:tests/README.md)** - Testing documentation and usage guide
+
+### Testing Best Practices
+
+#### Integration Testing Philosophy
+
+```python
+# ✅ DO: Use real test workflows
+workflow_path = os.path.join("tests", "example_workflow")
+workflow_path = os.path.join("tests", "hello_world_workflow")
+
+# ✅ DO: Test end-to-end functionality
+result = mcp_server.call_tool("get_user_details", {"user_id": "sara_doe_496"})
+
+# ❌ DON'T: Mock FastWorkflow components
+# ❌ DON'T: Use fake data when real data is available
+```
