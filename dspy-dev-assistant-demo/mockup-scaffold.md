@@ -1,8 +1,6 @@
-Sweet — I scaffolded a minimal, working codebase with CLI commands, DSPy Signatures/Modules, and stubbed pipelines for **refactor**, **testgen**, and **verify**.
+# DSPy-Powered Developer Assistant (Scaffold)
 
-[Download the scaffold (zip)](sandbox:/mnt/data/dspy-dev-assistant.zip)
-
-### What’s inside
+## What’s inside
 
 ```markdown
 dspy-dev-assistant/
