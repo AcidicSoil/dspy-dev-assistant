@@ -1,0 +1,7 @@
+{
+    "MD007": { "indent": 4 },
+    "MD013": false,
+    "no-hard-tabs": false,
+    "markdownlint.focusMode": true,
+    "markdownlint.run": true
+}
