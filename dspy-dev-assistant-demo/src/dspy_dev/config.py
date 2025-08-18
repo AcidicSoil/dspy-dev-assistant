@@ -6,7 +6,7 @@ from pathlib import Path
 
 @dataclass
 class RefactorConfig:
-    rules: List[str] = field(default_factory=lambda: ["long-method","duplicate-code","magic-numbers","mutable-defaults"])
+    rules: list[str] = field(default_factory=lambda: ["long-method","duplicate-code","magic-numbers","mutable-defaults"])
 
 @dataclass
 class TestGenConfig:
@@ -14,7 +14,7 @@ class TestGenConfig:
 
 @dataclass
 class VerifyConfig:
-    providers: List[str] = field(default_factory=list)
+    providers: list[str] = field(default_factory=list)
     cache_ttl_hours: int = 24
 
 @dataclass

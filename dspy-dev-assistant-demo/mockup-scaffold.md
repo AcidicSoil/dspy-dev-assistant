@@ -38,7 +38,7 @@ dspy-dev-assistant/
 
 ```bash
 cd dspy-dev-assistant
-uv venv -p 3.11 && source .venv/bin/activate
+uv venv -p 3.12 && source .venv/bin/activate
 uv sync
 uv run dspy-dev --help
 uv run dspy-dev refactor src/ --dry-run
