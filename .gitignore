@@ -5,8 +5,9 @@
 .codex/
 .clinerules/
 .vscode/
-docs/**/agent-rules
-
+!/docs/agent-rules/
+!/docs/ai_docs/*
+!/docs/dspy_docs/
 
 .venv/
 __pycache__/
