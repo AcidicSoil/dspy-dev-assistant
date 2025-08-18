@@ -3,6 +3,7 @@
     "MD036": false,
     "MD025": false,
     "MD013": false,
+    "MD041": false,
     "no-hard-tabs": false,
     "markdownlint.focusMode": true,
     "markdownlint.run": true

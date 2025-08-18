@@ -55,16 +55,16 @@ Actionable rules for AI assistants to follow during development:
 Reference documentation and knowledge bases:
 
 - **Swift Development**
-  - [swift-observable.mdc](./docs/swift-observable.mdc) - Migration guide from ObservableObject to @Observable macro
-  - [swift-observation.mdc](./docs/swift-observation.mdc) - Swift Observation framework documentation
-  - [swift-testing-api.mdc](./docs/swift-testing-api.mdc) - Swift Testing framework API reference
-  - [swift-testing-playbook.mdc](./docs/swift-testing-playbook.mdc) - Comprehensive guide for migrating to Swift Testing
-  - [swift-argument-parser.mdc](./docs/swift-argument-parser.mdc) - Swift Argument Parser framework documentation
-  - [swift6-migration.mdc](./docs/swift6-migration.mdc) - Guide for migrating to Swift 6 with concurrency
+    - [swift-observable.mdc](./docs/swift-observable.mdc) - Migration guide from ObservableObject to @Observable macro
+    - [swift-observation.mdc](./docs/swift-observation.mdc) - Swift Observation framework documentation
+    - [swift-testing-api.mdc](./docs/swift-testing-api.mdc) - Swift Testing framework API reference
+    - [swift-testing-playbook.mdc](./docs/swift-testing-playbook.mdc) - Comprehensive guide for migrating to Swift Testing
+    - [swift-argument-parser.mdc](./docs/swift-argument-parser.mdc) - Swift Argument Parser framework documentation
+    - [swift6-migration.mdc](./docs/swift6-migration.mdc) - Guide for migrating to Swift 6 with concurrency
 
 - **MCP Development**
-  - [mcp-best-practices.mdc](./docs/mcp-best-practices.mdc) - Best practices for building Model Context Protocol servers
-  - [mcp-releasing.mdc](./docs/mcp-releasing.mdc) - Guide for releasing MCP servers as NPM packages
+    - [mcp-best-practices.mdc](./docs/mcp-best-practices.mdc) - Best practices for building Model Context Protocol servers
+    - [mcp-releasing.mdc](./docs/mcp-releasing.mdc) - Guide for releasing MCP servers as NPM packages
 
 ### 📁 global-rules/
 
