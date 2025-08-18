@@ -1,5 +1,4 @@
 from __future__ import annotations
-import sys
 import pathlib
 import typer
 from rich import print

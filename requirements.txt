@@ -1,1 +1,7 @@
 dspy
+typer
+rich
+httpx
+beautifulsoup4
+pydantic
+libcst

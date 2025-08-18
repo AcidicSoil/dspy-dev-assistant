@@ -19,9 +19,9 @@ class VerifyConfig:
 
 @dataclass
 class Config:
-    refactor: RefactorConfig = RefactorConfig()
-    testgen: TestGenConfig = TestGenConfig()
-    verify: VerifyConfig = VerifyConfig()
+    refactor: RefactorConfig = field(default_factory=RefactorConfig)
+    testgen: TestGenConfig = field(default_factory=TestGenConfig)
+    verify: VerifyConfig = field(default_factory=VerifyConfig)
 
 def load_config(pyproject_path: Path | None = None) -> Config:
     pyproject_path = pyproject_path or Path("pyproject.toml")
