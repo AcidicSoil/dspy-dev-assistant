@@ -1,0 +1,10 @@
+apiVersion: dspy.rules/v1
+kind: RuleBundle
+meta:
+  name: project-defaults
+  description: Repository-wide defaults and clarifications.
+  owner: product-ml@company
+  version: 1.0.0
+  precedence: 80
+imports: []
+rules: []
